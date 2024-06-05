@@ -1,0 +1,148 @@
+body {
+    height: auto;
+    width: auto;
+    margin: 0;
+    font-family: 'DynaPuff', system-ui;
+}
+
+article {
+    display: flex;
+    justify-content: center;
+    height: 56.5em;
+}
+
+form {
+    margin-top: 5px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 65px;
+    color: #ffffff;
+    line-height: 2;
+    margin: 65px 0 0 0;
+}
+
+h2 {
+    color: #ffffff;
+    margin-top: 0;
+}
+
+h3 {
+    color: #ffffff;
+    font-size: 15px;
+    margin: 0 0 90px 0;
+    font-size: 32px;
+}
+
+h4 {
+    margin: 10px 0 10px 0;
+    font-size: 20px;
+}
+
+p {
+    margin: 0px;
+}
+
+button {
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 21px;
+    color: #ffffff;
+    background-color: #0063b2ff;
+    cursor: pointer;
+}
+
+img {
+    height: 200px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+/*------------- LEFT VIEW -------*/
+.container-one {
+    background-color: #9cc3d5ff;
+    width: 22em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    flex: 1;
+}
+
+.human-row h3 {
+    margin: 0 0 0 30px;
+}
+
+.change-game-btn {
+    margin-bottom: 300px;
+}
+
+.create-player-btn {
+    font-size: 12px;
+    padding: 5px;
+    margin-top: 5px;
+}
+/*------------- CENTER VIEW --------*/
+.container-two {
+    background-color: #0063b2ff;
+    width: 67em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.classic-box {
+    background: #9cc3d5ff;
+    height: 130px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 80px;
+    justify-content: space-around;
+}
+
+.classic-box:hover {
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.difficult-box {
+    background: #9cc3d5ff;
+    height: 150px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 80px;
+    justify-content: space-around;
+}
+
+.difficult-box:hover {
+    background-color: #ffffff;
+    cursor: pointer;
+}
+/*------------- RIGHT VIEW -------*/
+.container-three {
+    background-color: #9cc3d5ff;
+    width: 22em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    flex: 1;
+}
+
+.computer-row {
+    margin-bottom: 470px;
+}
+
+.computer-row h3 {
+    margin-bottom: 80px;
+    margin-left: 35px;
+}
