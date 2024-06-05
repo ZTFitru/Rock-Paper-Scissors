@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+    <title>Rock-Paper-Scissors</title>
+</head>
+<body>
+    <article class="out-wrap">
+        <section class="container-one">
+            <div class="profile">
+                <h3>Create Player 1</h3>
+                <form action="">
+                    <label for="user-input">Player Name: </label><input type="text"  id="user-input">
+                </form>
+                <form action="">
+                    <label for="sponge-bob">SpongeBob</label><input type="radio" value="spongebob" name="checked" id="sponge-bob" > <!--Change this later-->
+                    <label for="sandy">Sandy</label><input type="radio" value="sandy-cheeks" name="checked" id="sandy"><!---Change this later-->
+                </form>
+                <button class="create-player-btn">Create Player</button>
+            </div>
+            <div class="human-row hidden">
+                <h3>🧑🏽‍💻</h3>
+                <h2 class="user-name">Human</h2>
+                <p>Wins: 0</p>
+            </div>
+            <div class="change-game-btn">
+                <button>CHANGE GAME?</button>
+            </div>
+        </section>
+        <section class="container-two game-view">
+            <h1>Rock, Paper, Scissors</h1>
+            <h3>Choose your game!</h3>
+            <div class="classic-box">
+                <h4>🪨 CLASSIC ✂️</h4>
+                <P>rock > Scissors</P>
+                <p>paper > rock</p>
+                <p>Scissors > paper</p>
+            </div>
+            <div class="difficult-box">
+                <h4>DIFFICULT</h4>
+                <p>rock > scissors & lizard</p>
+                <p>paper > rock & alien</p>
+                <p>scissors > paper & alien</p>
+                <p>lizard > paper & alien</p>
+                <p>alien > scissors & rock</p>
+            </div>
+        </section>
+        <section class="container-three">
+            <div class="computer-row">
+                <h3>💻</h3>
+                <h2>Computer</h2>
+                <p>Wins: 0</p>
+            </div> 
+        </section>
+    </article>
+    <script src="main.js"></script>
+</body>
+</html>
