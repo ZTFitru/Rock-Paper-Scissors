@@ -14,12 +14,12 @@
         <section class="container-one">
             <div class="profile">
                 <h3>Create Player 1</h3>
-                <form action="">
+                <form>
                     <label for="user-input">Player Name: </label><input type="text"  id="user-input">
                 </form>
-                <form action="">
-                    <label for="sponge-bob">SpongeBob</label><input type="radio" value="spongebob" name="checked" id="sponge-bob" > <!--Change this later-->
-                    <label for="sandy">Sandy</label><input type="radio" value="sandy-cheeks" name="checked" id="sandy"><!---Change this later-->
+                <form>
+                    <label for="sponge-bob">SpongeBob</label><input type="radio" value="spongebob" name="checked" id="sponge-bob" >
+                    <label for="sandy">Sandy</label><input type="radio" value="sandy-cheeks" name="checked" id="sandy">
                 </form>
                 <button class="create-player-btn">Create Player</button>
             </div>
@@ -28,11 +28,11 @@
                 <h2 class="user-name">Human</h2>
                 <p>Wins: 0</p>
             </div>
-            <div class="change-game-btn">
+            <div class="change-game-btn hidden">
                 <button>CHANGE GAME?</button>
             </div>
         </section>
-        <section class="container-two game-view"> <!----MAYBE ADD A HIDDEN FEATURE FROM THE MAIN JS --- maybe do the human hidden here-->
+        <section class="container-two game-view"> 
             <h1>Rock, Paper, Scissors</h1>
             <h3>Choose your game!</h3>
             <div class="classic-box">
@@ -55,21 +55,21 @@
                 <p>alien > scissors & rock</p>
             </div>
             <div class="human-selection hidden">
-                <img src="assets/happy-rock.png" alt="rock">
-                <img src="assets/happy-paper.png" alt="paper">
-                <img src="assets/happy-scissors.png" alt="scissors">
-                <img src="assets/happy-lizard.png" alt="lizard"></img>
-                <img src="assets/happy-alien.png" alt="alien"></img>
+                <img src="assets/happy-rock.png" alt="rock" name="rock" class="rock">
+                <img src="assets/happy-paper.png" alt="paper" name="paper" class="paper">
+                <img src="assets/happy-scissors.png" alt="scissors" name="scissors" class="scissors">
+                <img src="assets/happy-lizard.png" alt="lizard" name="lizard" class="lizard">
+                <img src="assets/happy-alien.png" alt="alien" name="alien" class="alien">
             </div>
         </section>
         <section class="container-three computer-view">
             <div class="computer-row">
-                <h3>💻</h3>
-                <h2>Computer</h2>
+                <img src="assets/plankton-Img.png" alt="plankton">
+                <h2>PLANKTON</h2>
                 <p>Wins: 0</p>
             </div> 
         </section>
     </article>
-    <script src="testThree.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
