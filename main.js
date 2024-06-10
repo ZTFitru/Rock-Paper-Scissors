@@ -1,5 +1,5 @@
 var computerChoices = ['rock', 'paper', 'scissors']
-var computerChoicesDifficult = ['rock', 'paper', 'scissors', 'alien', 'lizard']
+var computerChoicesDifficult = ['spongeBob', 'patrick', 'squidward', 'mrKrabs', 'sandyCheeks']
 /*--------------------------- VARIABLES ------------------------------------*/
 var spongeBobImg;
 var sandyImg;
@@ -19,13 +19,13 @@ var gameView = document.querySelector('.game-view');
 var computerView = document.querySelector('.computer-view');
 var createProfile = document.querySelector('.human-row');
 var changeGameBtn = document.querySelector('.change-game-btn');
-/*-------- RADIO SELECTION -------------------*/
-var selectedSpongeBob = document.querySelector('#sponge-bob');
-var selectedSandy = document.querySelector('#sandy');
-var playerInput = document.querySelector('#user-input');
 var playerprofile = document.querySelector('.create-player-btn');
 var profileView = document.querySelector('.profile');
-/*-------- EVENT LISTENERS--------------------*/ 
+/*-------- RADIO SELECTION -------------------*/
+var selectedSpongeBob = document.querySelector('#spongeBob');
+var selectedSandy = document.querySelector('#sandy');
+var playerInput = document.querySelector('#userInput');
+/*-------- EVENT LISTENERS--------------------*/
 classicGame.addEventListener('click', selectedClassicGame);
 difficultGame.addEventListener('click', selectedDifficultGame);
 selectedSpongeBob.addEventListener('click', spongeBobIcon);
@@ -35,8 +35,8 @@ changeGameBtn.addEventListener('click', gameChangeBtn);
 /*--------------------------- FUNCTIONS -------------------------------------*/
 
 function showGameScreen() {
-    gameView.innerHTML = 
-    `<section class="container-two game-view"> 
+    gameView.innerHTML =
+        `<section class="container-two game-view"> 
         <h1>Rock, Paper, Scissors</h1>
         <h3>Choose your game!</h3>
         <div class="classic-box">
@@ -51,19 +51,19 @@ function showGameScreen() {
             <img src="assets/happy-scissors.png" alt="scissors" name="scissors" class="scissors">
         </div>
         <div class="difficult-box">
-            <h4>DIFFICULT</h4>
-            <p>rock > scissors & lizard</p>
-            <p>paper > rock & alien</p>
-            <p>scissors > paper & alien</p>
-            <p>lizard > paper & alien</p>
-            <p>alien > scissors & rock</p>
+            <h4>🧽 DIFFICULT 🐿️</h4>
+            <p>spongeBob > squidward & mrKrabs</p>
+            <p>patrick > spongeBob & sandyCheeks</p>
+            <p>squidward > patrick & mrKrabs</p>
+            <p>mrKrabs > patrick & sandyCheeks</p>
+            <p>sandyCheeks > squidward & spongeBob</p>
         </div>
         <div class="human-selection hidden">
-            <img src="assets/happy-rock.png" alt="rock" name="rock" class="rock">
-            <img src="assets/happy-paper.png" alt="paper" name="paper" class="paper">
-            <img src="assets/happy-scissors.png" alt="scissors" name="scissors" class="scissors">
-            <img src="assets/happy-lizard.png" alt="lizard" name="lizard" class="lizard">
-            <img src="assets/happy-alien.png" alt="alien" name="alien" class="alien">
+            <img src="assets/happy-spongebob.png" alt="spongeBob" name="spongeBob" class="spongeBob">
+            <img src="assets/happy-patrick.png" alt="patrick" name="patrick" class="patrick">
+            <img src="assets/happy-squidward.png" alt="squidward" name="squidward" class="squidward">
+            <img src="assets/happy-mrKrabs.png" alt="mrKrabs" name="mrKrabs" class="mrKrabs">
+            <img src="assets/happy-sandyCheeks.png" alt="sandyCheeks" name="sandyCheeks" class="sandyCheeks">
         </div>
     </section>`;
     changeGameBtn.classList.add('hidden');
@@ -71,11 +71,10 @@ function showGameScreen() {
     document.querySelector('.difficult-box').addEventListener('click', selectedDifficultGame);
 }
 
-
 function selectedClassicGame() {
     typeOfGame = 'classic';
     gameView.innerHTML =
-    `<section class="container-two classicGame">
+        `<section class="container-two classicGame">
         <h1>Rock, Paper, Scissors</h1>
         <h3>Choose your fighter!</h3>
         <div class="human-selection">
@@ -91,15 +90,15 @@ function selectedClassicGame() {
 function selectedDifficultGame() {
     typeOfGame = 'difficult';
     gameView.innerHTML =
-    `<section class="container-two difficultGame">
+        `<section class="container-two difficultGame">
         <h1>Rock, Paper, Scissors</h1>
         <h3>Choose your fighter!</h3>
-        <div class="human-selection">
-            <img src="assets/happy-rock.png" alt="rock" name="rock" class"rock">
-            <img src="assets/happy-paper.png" alt="paper" name="paper" class="paper>
-            <img src="assets/happy-scissors.png" alt="scissors" name="scissors" class="scissors">
-            <img src="assets/happy-lizard.png" alt="lizard" name="lizard" class="lizard">
-            <img src="assets/happy-alien.png" alt="alien" name="alien" class="alien">
+        <div class="human-selection img-display">
+            <img src="assets/happy-spongebob.png" alt="spongeBob" name="spongeBob" class="spongeBob">
+            <img src="assets/happy-patrick.png" alt="patrick" name="patrick" class="patrick">
+            <img src="assets/happy-squidward.png" alt="squidward" name="squidward" class="squidward">
+            <img src="assets/happy-mrKrabs.png" alt="mrKrabs" name="mrKrabs" class="mrKrabs">
+            <img src="assets/happy-sandyCheeks.png" alt="sandyCheeks" name="sandyCheeks" class="sandyCheeks">
         </div>
     </section>`;
     changeGameBtn.classList.remove('hidden')
@@ -119,7 +118,7 @@ function spongeBobIcon(event) {
 }
 
 function sandyIcon(event) {
-    if(event.target.value === 'sandy-cheeks') {
+    if (event.target.value === 'sandy-cheeks') {
         sandyImg = event.target.value;
     }
 }
@@ -131,15 +130,15 @@ function createChar(player) {
         return;
     }
     playerIcon = spongeBobImg || sandyImg
-    if(playerIcon === spongeBobImg) {
+    if (playerIcon === spongeBobImg) {
         profileView.innerHTML =
-        `<div class="human-row">
+            `<div class="human-row">
             <img src="assets/spongebob-new.png">
             <h2 class="user-name">${userInput}</h2>
             <p>Wins: ${playerWins}</p>
         </div>`;
-        computerView.innerHTML = 
-        `<section class="container-three computer-view">
+        computerView.innerHTML =
+            `<section class="container-three computer-view">
             <div class="computer-row">
                 <img src="assets/plankton-Img.png" alt="plankton">
                 <h2>PLANKTON</h2>
@@ -147,15 +146,15 @@ function createChar(player) {
             </div> 
         </section>`;
     }
-    if(playerIcon === sandyImg) {
-        profileView.innerHTML = 
-        `<div class="human-row">
+    if (playerIcon === sandyImg) {
+        profileView.innerHTML =
+            `<div class="human-row">
             <img src="assets/Sandy_Cheeks.svg.png">
             <h2>${userInput}</h2>
             <p>Wins: ${playerWins}</p>
         </div>`;
-        computerView.innerHTML = 
-        `<section class="container-three computer-view">
+        computerView.innerHTML =
+            `<section class="container-three computer-view">
             <div class="computer-row">
                 <img src="assets/plankton-Img.png" alt="plankton">
                 <h2>PLANKTON</h2>
@@ -174,21 +173,21 @@ function createPlayer(name, icon) {
     }
 }
 /*--------------------------- USER SELECTION OPTIONS ------------------------------------*/
+
 function playerSelectionListener() {
-    var playerSelection = document.querySelector('.human-selection') 
-    if(playerSelection) {
+    var playerSelection = document.querySelector('.human-selection')
+    if (playerSelection) {
         playerSelection.addEventListener('click', playerPick);
     }
 }
 
 function playerPick(event) {
     userSelection = event.target.name;
-    if(userSelection) { 
-        player = {name: playerInput.value, icon: spongeBobImg || sandyImg, wins: 0};
-        if(typeOfGame === 'classic') {
+    if (userSelection) {
+        player = { name: playerInput.value, icon: spongeBobImg || sandyImg, wins: 0 };
+        if (typeOfGame === 'classic') {
             createClassicGame(player, userSelection);
-        }
-        else if(typeOfGame === 'difficult') {
+        } else if (typeOfGame === 'difficult') {
             createDifficultGame(player, userSelection);
         }
     }
@@ -201,7 +200,7 @@ function createClassicGame(player, userSelection) {
     updateProfiles();
     setTimeout(() => {
         resetBoard()
-    }, 1000); 
+    }, 1000);
 }
 
 function createDifficultGame(player, userSelection) {
@@ -215,269 +214,95 @@ function createDifficultGame(player, userSelection) {
 }
 
 function classicGameOutcom(player, userSelection, computerPick) {
-    if(userSelection === computerPick) {
+    if (userSelection === computerPick) {
         outcome = 'tie';
-        if(userSelection === 'rock' && computerPick === 'rock') {
-            gameView.innerHTML =
+        gameView.innerHTML =
             `<section class="container-two">
-                <h1>Rock, Paper, Scissors</h1>
-                <h3>${player.name} TIED WITH PLANKTON </h3>
-                <div class="human-selection">
-                    <img src="assets/happy-rock.png" alt="rock" name="rock" class="rock">
-                    <img src="assets/happy-rock.png" alt="rock" name="rock" class="rock">
-                </div>
-            </section>`
-        }
-        else if(userSelection === 'paper' && computerPick === 'paper') {
-            gameView.innerHTML =
-            `<section class="container-two">
-                <h1>Rock, Paper, Scissors</h1>
-                <h3>${player.name} TIED WITH PLANKTON </h3>
-                <div class="human-selection">
-                    <img src="assets/happy-paper.png" alt="paper" name="paper" class="paper">
-                    <img src="assets/happy-paper.png" alt="paper" name="paper" class="paper">
-                </div>
-            </section>`
-        }
-        else if(userSelection === 'scissors' && computerPick === 'scissors') {
-            gameView.innerHTML = 
-            `<section class="container-two">
-                <h1>Rock, Paper, Scissors</h1>
-                <h3>${player.name} TIED WITH PLANKTON </h3>
-                <div class="human-selection">
-                    <img src="assets/happy-scissors.png" alt="scissors" name="scissors" class="scissors">
-                    <img src="assets/happy-scissors.png" alt="scissors" name="scissors" class="scissors">
-                </div>
-            </section>`
-        }
+            <h1>Rock, Paper, Scissors</h1>
+            <h3>${player.name} TIED WITH PLANKTON </h3>
+            <div class="human-selection">
+                <img src="assets/happy-${userSelection}.png">
+                <img src="assets/happy-${computerPick}.png">
+            </div>
+        </section>`;
     }
-    if((userSelection === 'rock' && computerPick === 'scissors') || 
+    else if ((userSelection === 'rock' && computerPick === 'scissors') ||
         (userSelection === 'paper' && computerPick === 'rock') ||
-        (userSelection === 'scissors' && computerPick === 'paper')){
-            outcome = 'win'
-        if(userSelection === 'rock' && computerPick === 'scissors') {
-            gameView.innerHTML =
+        (userSelection === 'scissors' && computerPick === 'paper')) {
+        outcome = 'win';
+        gameView.innerHTML =
             `<section class="container-two">
-                <h1>Rock, Paper, Scissors</h1>
-                <h3> ${player.name} WON  </h3>
-                <div class="human-selection">
-                    <img src="assets/happy-rock.png" alt="rock" name="rock" class="rock">
-                    <img src="assets/happy-scissors.png" alt="scissors" name="scissors" class="scissors">
-                </div>
-            </section>`;
-        }
-        else if(userSelection === 'paper' && computerPick === 'rock') {
-            gameView.innerHTML =
-            `<section class="container-two">
-                <h1>Rock, Paper, Scissors</h1>
-                <h3>${player.name} WON </h3>
-                <div class="human-selection">
-                    <img src="assets/happy-rock.png" alt="rock" name="rock" class="rock">
-                    <img src="assets/happy-paper.png" alt="paper" name="paper" class="paper">
-                </div>
-            </section>`;
-        }
-        else if(userSelection === 'scissors' && computerPick === 'paper') {
-            gameView.innerHTML =
-            `<section class="container-two">
-                <h1>Rock, Paper, Scissors</h1>
-                <h3>${player.name} WON </h3>
-                <div class="human-selection">
-                    <img src="assets/happy-scissors.png" alt="scissors" name="scissors" class="scissors">
-                    <img src="assets/happy-paper.png" alt="paper" name="paper" class="paper">
-                </div>
-            </section>`;
-        }
+            <h1>Rock, Paper, Scissors</h1>
+            <h3>${player.name} BEAT PLANKTON </h3>
+            <div class="human-selection">
+                <img src="assets/happy-${userSelection}.png">
+                <img src="assets/happy-${computerPick}.png">
+            </div>
+        </section>`;
     }
-    else if((computerPick === 'rock' && userSelection === 'scissors') || 
-            (computerPick === 'paper' && userSelection === 'rock') ||
-            (computerPick === 'scissors' && userSelection === 'paper')){
-        outcome = 'lose'
-        if(computerPick === 'rock' && userSelection === 'scissors') {
-            gameView.innerHTML =
+    else {
+        outcome = 'lose';
+        gameView.innerHTML =
             `<section class="container-two">
-                <h1>Rock, Paper, Scissors</h1>
-                <h3> ${player.name} WON  </h3>
-                <div class="human-selection">
-                    <img src="assets/happy-scissors.png" alt="scissors" name="scissors" class="scissors">
-                    <img src="assets/happy-rock.png" alt="rock" name="rock" class="rock">
-                </div>
-            </section>`;
-        }
-        else if(computerPick === 'paper' && userSelection === 'rock') {
-            gameView.innerHTML =
-            `<section class="container-two">
-                <h1>Rock, Paper, Scissors</h1>
-                <h3>${player.name} WON </h3>
-                <div class="human-selection">
-                    <img src="assets/happy-paper.png" alt="paper" name="paper" class="paper">
-                    <img src="assets/happy-rock.png" alt="rock" name="rock" class="rock">
-                </div>
-            </section>`;
-        }
-        else if(computerPick === 'scissors' && userSelection === 'paper') {
-            gameView.innerHTML =
-            `<section class="container-two">
-                <h1>Rock, Paper, Scissors</h1>
-                <h3>${player.name} WON </h3>
-                <div class="human-selection">
-                    <img src="assets/happy-paper.png" alt="paper" name="paper" class="paper">
-                    <img src="assets/happy-scissors.png" alt="scissors" name="scissors" class="scissors">
-                </div>
-            </section>`;
-        }
+            <h1>Rock, Paper, Scissors</h1>
+            <h3>PLANKTON WON, ${player.name} LOST </h3>
+            <div class="human-selection">
+                <img src="assets/happy-${userSelection}.png">
+                <img src="assets/happy-${computerPick}.png">
+            </div>
+        </section>`;
     }
 }
 
 
 function difficultGameOutcome(player, userSelection, computerPick) {
-    if(userSelection === computerPick) {
-        outcome = 'tie'
+    if (userSelection === computerPick) {
+        outcome = 'tie';
         gameView.innerHTML =
-        `<section class="container-two">
+            `<section class="container-two">
             <h1>Rock, Paper, Scissors</h1>
             <h3>${player.name} TIED WITH PLANKTON </h3>
             <div class="human-selection">
-                <img src="assets/happy-rock.png" alt="rock" name="rock" class="rock">
-                <img src="assets/happy-scissors.png" alt="scissors" name="scissors" class="scissors">
-                <img src="assets/happy-paper.png" alt="paper" name="paper" class="paper">
-                <img src="assets/happy-lizard.png" alt="lizard">
-                <img src="assets/happy-alien.png" alt="alien">
+                <img src="assets/happy-${userSelection}.png">
+                <img src="assets/happy-${computerPick}.png">
+            </div>
+        </section>`;
+    } else if ((userSelection === 'spongeBob' && (computerPick === 'squidward' || computerPick === 'mrKrabs')) ||
+        (userSelection === 'patrick' && (computerPick === 'spongeBob' || computerPick === 'sandyCheeks')) ||
+        (userSelection === 'squidward' && (computerPick === 'mrKrabs' || computerPick === 'patrick')) ||
+        (userSelection === 'mrKrabs' && (computerPick === 'patrick' || computerPick === 'sandyCheeks')) ||
+        (userSelection === 'sandyCheeks' && (computerPick === 'spongeBob' || computerPick === 'squidward'))) {
+        outcome = 'win'
+        gameView.innerHTML =
+            `<section class="container-two">
+            <h1>Rock, Paper, Scissors</h1>
+            <h3>${player.name} BEAT PLANKTON </h3>
+            <div class="human-selection">
+                <img src="assets/happy-${userSelection}.png">
+                <img src="assets/happy-${computerPick}.png">
             </div>
         </section>`;
     }
-    else if((userSelection === 'rock' && (computerPick === 'scissors' || computerPick === 'lizard')) || 
-            (userSelection === 'paper' && (computerPick === 'rock' || computerPick === 'alien')) ||
-            (userSelection === 'scissors' && (computerPick === 'paper' || computerPick === 'lizard')) ||
-            (userSelection === 'lizard' && (computerPick === 'paper' || computerPick === 'alien')) ||
-            (userSelection === 'alien' && (computerPick === 'scissors' || computerPick === 'rock'))) {
-            outcome = 'win'
-        if(userSelection === 'rock' && (computerPick === 'scissors' || computerPick === 'lizard')) {
-            gameView.innerHTML =
-            `<section class="container-two">
-                <h1>Rock, Paper, Scissors</h1>
-                <h3> ${player.name} WON  </h3>
-                <div class="human-selection">
-                    <img src="assets/happy-rock.png" alt="rock" name="rock" class="rock">
-                    <img src="assets/happy-scissors.png" alt="scissors" name="scissors" class="scissors">
-                </div>
-            </section>`;
-        }
-        if(userSelection === 'paper' && (computerPick === 'rock' || computerPick === 'alien')) {
-            gameView.innerHTML =
-            `<section class="container-two">
-                <h1>Rock, Paper, Scissors</h1>
-                <h3>${player.name} WON </h3>
-                <div class="human-selection">
-                    <img src="assets/happy-rock.png" alt="rock" name="rock" class="rock">
-                    <img src="assets/happy-paper.png" alt="paper" name="paper" class="paper">
-                </div>
-            </section>`;
-        }
-        if(userSelection === 'scissors' && (computerPick === 'paper' || computerPick === 'lizard')) {
-            gameView.innerHTML =
-            `<section class="container-two">
-                <h1>Rock, Paper, Scissors</h1>
-                <h3>${player.name} WON </h3>
-                <div class="human-selection">
-                    <img src="assets/happy-scissors.png" alt="scissors" name="scissors" class="scissors">
-                    <img src="assets/happy-paper.png" alt="paper" name="paper" class="paper">
-                </div>
-            </section>`;
-        }
-        if(userSelection === 'lizard' && (computerPick === 'paper' || computerPick === 'alien')) {
-            gameView.innerHTML =
-            `<section class="container-two">
-                <h1>Rock, Paper, Scissors</h1>
-                <h3>${player.name} WON </h3>
-                <div class="human-selection">
-                    <img src="assets/happy-lizard.png" alt="lizard">
-                    <img src="assets/happy-paper.png" alt="paper" name="paper" class="paper">
-                </div>
-            </section>`;
-        }
-        if(userSelection === 'alien' && (computerPick === 'scissors' || computerPick === 'rock')) {
-            gameView.innerHTML =
-            `<section class="container-two">
-                <h1>Rock, Paper, Scissors</h1>
-                <h3>${player.name} WON </h3>
-                <div class="human-selection">
-                    <img src="assets/happy-alien.png" alt="alien">
-                    <img src="assets/happy-paper.png" alt="paper" name="paper" class="paper">
-                </div>
-            </section>`;
-        }
-    }
-    else if((computerPick === 'rock' && (userSelection === 'scissors' || userSelection === 'lizard')) || 
-            (computerPick === 'paper' && (userSelection === 'rock' || userSelection === 'alien')) ||
-            (computerPick === 'scissors' && (userSelection === 'paper' || userSelection === 'alien'))
-            (computerPick === 'lizard' && (userSelection === 'paper' || userSelection === 'alien')) ||
-            (computerPick === 'alien' && (userSelection === 'scissors' || userSelection === 'rock'))){
+    else {
         outcome = 'lose'
-        if(computerPick === 'rock' && (userSelection === 'scissors' || userSelection === 'lizard')) {
         gameView.innerHTML =
             `<section class="container-two">
-                <h1>Rock, Paper, Scissors</h1>
-                <h3> ${player.name} WON  </h3>
-                <div class="human-selection">
-                    <img src="assets/happy-rock.png" alt="rock" name="rock" class="rock">
-                    <img src="assets/happy-scissors.png" alt="scissors" name="scissors" class="scissors">
-                </div>
-            </section>`;
-        }
-        else if(computerPick === 'paper' && (userSelection === 'rock' || userSelection === 'alien')) {
-            gameView.innerHTML =
-            `<section class="container-two">
-                <h1>Rock, Paper, Scissors</h1>
-                <h3>${player.name} WON </h3>
-                <div class="human-selection">
-                    <img src="assets/happy-paper.png" alt="paper" name="paper" class="paper">
-                    <img src="assets/happy-rock.png" alt="rock" name="rock" class="rock">
-                </div>
-            </section>`;
-        }
-        else if(computerPick === 'scissors' && (userSelection === 'paper' || userSelection === 'alien')) {
-            gameView.innerHTML =
-            `<section class="container-two">
-                <h1>Rock, Paper, Scissors</h1>
-                <h3>${player.name} WON </h3>
-                <div class="human-selection">
-                    <img src="assets/happy-scissors.png" alt="scissors" name="scissors" class="scissors">
-                    <img src="assets/happy-paper.png" alt="paper" name="paper" class="paper">
-                </div>
-            </section>`;
-        }
-        else if(computerPick === 'lizard' && (userSelection === 'paper' || userSelection === 'alien')) {
-            gameView.innerHTML =
-            `<section class="container-two">
-                <h1>Rock, Paper, Scissors</h1>
-                <h3>${player.name} WON </h3>
-                <div class="human-selection">
-                    <img src="assets/happy-lizard.png" alt="lizard">
-                    <img src="assets/happy-paper.png" alt="paper" name="paper" class="paper">
-                </div>
-            </section>`;
-        }
-        else if(computerPick === 'alien' && (userSelection === 'scissors' || userSelection === 'rock')) {
-            gameView.innerHTML =
-            `<section class="container-two">
-                <h1>Rock, Paper, Scissors</h1>
-                <h3>${player.name} WON </h3>
-                <div class="human-selection">
-                    <img src="assets/happy-alien.png" alt="alien">
-                    <img src="assets/happy-scissors.png" alt="scissors" name="scissors" class="scissors">
-                </div>
-            </section>`;
-        }
+            <h1>Rock, Paper, Scissors</h1>
+            <h3>PLANKTON WON, ${player.name} LOST</h3>
+            <div class="human-selection">
+                <img src="assets/happy-${userSelection}.png">
+                <img src="assets/happy-${computerPick}.png">
+            </div>
+        </section>`;
     }
-    
+
 }
 
 function updateScore(outcome) {
-    if(outcome === 'win') {
+    if (outcome === 'win') {
         playerWins++;
     }
-    else if(outcome === 'lose') {
+    else if (outcome === 'lose') {
         computerScore++;
     }
 }
@@ -489,16 +314,16 @@ function updateProfiles() {
 
 function updatePlayerProfile() {
     playerIcon = spongeBobImg || sandyImg
-    if(playerIcon === spongeBobImg) {
-        profileView.innerHTML = 
-        `<div class="human-row">
+    if (playerIcon === spongeBobImg) {
+        profileView.innerHTML =
+            `<div class="human-row">
             <img src="assets/spongebob-new.png">
             <h2 class="user-name">${userInput}</h2>
             <p>Wins: ${playerWins}</p>
         </div>`
-    }else if(playerIcon === sandyImg) {
-        profileView.innerHTML = 
-        `<div class="human-row">
+    } else if (playerIcon === sandyImg) {
+        profileView.innerHTML =
+            `<div class="human-row">
             <img src="assets/Sandy_Cheeks.svg.png">
             <h2>${userInput}</h2>
             <p>Wins: ${playerWins}</p>
@@ -507,8 +332,8 @@ function updatePlayerProfile() {
 }
 
 function updateComputerProfile() {
-    computerView.innerHTML = 
-    `<section class="container-three computer-view">
+    computerView.innerHTML =
+        `<section class="container-three computer-view">
         <div class="computer-row">
             <img src="assets/plankton-Img.png" alt="plankton">
             <h2>PLANKTON</h2>
@@ -518,7 +343,6 @@ function updateComputerProfile() {
 }
 
 function resetBoard() {
-    console.log(classicGame.classList.contains('classicGame'))
     if (typeOfGame === 'classic') {
         selectedClassicGame();
     } else if (typeOfGame === 'difficult') {
